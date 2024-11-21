@@ -38,3 +38,14 @@ export const getFilters = async (): Promise<Filter[]> => {
     throw error;
   }
 };
+
+export const getRestaurantOpenStatus = async (restaurantId: string) => {
+  try {
+    const response = await fetch(ENDPOINTS.open.replace("{id}", restaurantId));
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching restaurant open status:", error);
+    return null;
+  }
+};
