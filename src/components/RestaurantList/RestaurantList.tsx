@@ -6,11 +6,13 @@ import RestaurantCard from "./RestaurantCard";
 interface RestaurantListProps {
   activeFilters: string[];
   activeDeliveryTimes: string[];
+  activePriceRanges: string[];
 }
 
 const RestaurantList: React.FC<RestaurantListProps> = ({
   activeFilters,
   activeDeliveryTimes,
+  activePriceRanges,
 }) => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +51,13 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
         );
       });
 
-    return passesFilterCheck && passesDeliveryTimeCheck;
+    const passesPriceRangeCheck =
+      activePriceRanges.length === 0 ||
+      activePriceRanges.includes(restaurant.price_range_id);
+
+    return (
+      passesFilterCheck && passesDeliveryTimeCheck && passesPriceRangeCheck
+    );
   });
 
   if (isLoading) {
