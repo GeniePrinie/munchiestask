@@ -48,8 +48,8 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen py-6 px-7">
-      <header className="flex items-center gap-2">
+    <div className="bg-gray-50 min-h-screen">
+      <header className="flex items-center gap-2 py-6 px-7">
         <div className="w-7">
           <img src="/images/logo/munchiesLogo.png" alt="munchies logo" />
         </div>

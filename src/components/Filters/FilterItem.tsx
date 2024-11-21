@@ -19,11 +19,11 @@ const FilterItem: React.FC<FilterItemProps> = ({
         relative 
         w-44 h-20 p-3 rounded-lg flex-shrink-0 min-w-[176px] 
         transition-all duration-200 ease-in-out
-        hover:shadow-md
+        hover:shadow-md border 
       ${
         isActive
-          ? "bg-blue-50 border border-blue-500 text-blue-700"
-          : "bg-white border border-gray-100 text-gray-700 hover:bg-gray-50"
+          ? "bg-blue-50  border-blue-500 text-blue-700"
+          : "bg-white  border-gray-200 text-gray-700 hover:bg-gray-50"
       }
     `}
     >

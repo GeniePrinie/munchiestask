@@ -17,7 +17,7 @@ const Topbar: React.FC<TopbarProps> = ({
     return null;
   }
   return (
-    <header className="bg-gray-50 shadow-sm">
+    <div className="bg-gray-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-4">
           <div className="flex overflow-x-auto gap-4 pb-4">
@@ -32,7 +32,7 @@ const Topbar: React.FC<TopbarProps> = ({
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 
