@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RestaurantList from "./components/RestaurantList/RestaurantList";
 import Topbar from "./components/Layout/Topbar";
-import { DeliveryTimeRange, Filter } from "./types";
+import { DeliveryTimeRange, Filter, PriceRange } from "./types";
 import { getFilters } from "./api/services";
 import Sidebar from "./components/Layout/Sidebar";
 
@@ -9,7 +9,7 @@ function App() {
   const [filters, setFilters] = useState<Filter[]>([]);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [activeDeliveryTimes, setActiveDeliveryTimes] = useState<string[]>([]);
-
+  const [activePriceRanges, setActivePriceRanges] = useState<string[]>([]);
   useEffect(() => {
     const fetchFilters = async () => {
       try {
@@ -38,6 +38,15 @@ function App() {
         : [...prev, timeRange.id]
     );
   };
+
+  const handlePriceRangeToggle = (priceRange: PriceRange) => {
+    setActivePriceRanges((prev) =>
+      prev.includes(priceRange.id)
+        ? prev.filter((id) => id !== priceRange.id)
+        : [...prev, priceRange.id]
+    );
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen py-6 px-7">
       <header className="flex items-center gap-2">
@@ -53,8 +62,10 @@ function App() {
             filters={filters}
             activeFilters={activeFilters}
             activeDeliveryTimes={activeDeliveryTimes}
+            activePriceRanges={activePriceRanges}
             onToggle={handleFilterToggle}
             onDeliveryTimeToggle={handleDeliveryTimeToggle}
+            onPriceRangeToggle={handlePriceRangeToggle}
           />
         </div>
 

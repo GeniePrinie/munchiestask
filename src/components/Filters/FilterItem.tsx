@@ -17,7 +17,7 @@ const FilterItem: React.FC<FilterItemProps> = ({
       onClick={() => onToggle(filter)}
       className={`
         relative 
-        w-44 h-20 p-3 rounded-lg flex-shrink-0 min-w-[176px] border border-gray-200
+        w-44 h-20 p-3 rounded-lg flex-shrink-0 min-w-[176px] 
         transition-all duration-200 ease-in-out
         hover:shadow-md
       ${
