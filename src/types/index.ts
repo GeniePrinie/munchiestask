@@ -47,3 +47,8 @@ export const PRICE_RANGES: PriceRange[] = [
   { id: "ff6b5391-2f0d-4b39-8ba8-d415c52a425d", name: "$$$" },
   { id: "f24fc0fb-a339-4240-a223-1365ec1aee07", name: "$$$$" },
 ];
+
+export interface PriceRangeResponse {
+  id: string;
+  range: string;
+}

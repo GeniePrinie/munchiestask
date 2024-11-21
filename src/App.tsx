@@ -80,6 +80,7 @@ function App() {
             <RestaurantList
               activeFilters={activeFilters}
               activeDeliveryTimes={activeDeliveryTimes}
+              activePriceRanges={activePriceRanges}
             />
           </main>
         </div>
