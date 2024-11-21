@@ -54,27 +54,31 @@ const Sidebar: React.FC<SidebarProps> = ({
           Delivery time
         </h4>
 
-        {DELIVERY_TIME_RANGES.map((timeRange) => (
-          <DeliveryTime
-            key={timeRange.id}
-            timeRange={timeRange}
-            isActive={activeDeliveryTimes.includes(timeRange.id)}
-            onToggle={onDeliveryTimeToggle}
-          />
-        ))}
+        <div className="flex flex-row flex-wrap gap-2">
+          {DELIVERY_TIME_RANGES.map((timeRange) => (
+            <DeliveryTime
+              key={timeRange.id}
+              timeRange={timeRange}
+              isActive={activeDeliveryTimes.includes(timeRange.id)}
+              onToggle={onDeliveryTimeToggle}
+            />
+          ))}
+        </div>
 
         <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
           Price range
         </h4>
 
-        {PRICE_RANGES.map((priceRange) => (
-          <PriceRangeFilter
-            key={priceRange.id}
-            priceRange={priceRange}
-            isActive={activePriceRanges.includes(priceRange.id)}
-            onToggle={onPriceRangeToggle}
-          />
-        ))}
+        <div className="flex flex-row gap-2">
+          {PRICE_RANGES.map((priceRange) => (
+            <PriceRangeFilter
+              key={priceRange.id}
+              priceRange={priceRange}
+              isActive={activePriceRanges.includes(priceRange.id)}
+              onToggle={onPriceRangeToggle}
+            />
+          ))}
+        </div>
       </div>
     </aside>
   );
