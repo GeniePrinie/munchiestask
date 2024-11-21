@@ -24,7 +24,7 @@ const DeliveryTime: React.FC<DeliveryTimeProps> = ({
       ${
         isActive
           ? "bg-blue-50 border border-blue-500 text-blue-700"
-          : "bg-white border border-gray-100 text-gray-700 hover:bg-gray-50"
+          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50"
       }
     `}
     >
