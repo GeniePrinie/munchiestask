@@ -1,22 +1,33 @@
 import React from "react";
-import { DELIVERY_TIME_RANGES, DeliveryTimeRange, Filter } from "../../types";
+import {
+  DELIVERY_TIME_RANGES,
+  DeliveryTimeRange,
+  Filter,
+  PRICE_RANGES,
+  PriceRange,
+} from "../../types";
 import FoodCategory from "../Filters/FoodCategory";
 import DeliveryTime from "../Filters/DeliveryTime";
+import PriceRangeFilter from "../Filters/PriceRange";
 
 interface SidebarProps {
   filters: Filter[];
   activeFilters: string[];
   activeDeliveryTimes: string[];
+  activePriceRanges: string[];
   onToggle: (filter: Filter) => void;
   onDeliveryTimeToggle: (timeRange: DeliveryTimeRange) => void;
+  onPriceRangeToggle: (priceRange: PriceRange) => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   filters,
   activeFilters,
   activeDeliveryTimes,
+  activePriceRanges,
   onToggle,
   onDeliveryTimeToggle,
+  onPriceRangeToggle,
 }) => {
   if (!Array.isArray(filters)) {
     return null;
@@ -55,6 +66,15 @@ const Sidebar: React.FC<SidebarProps> = ({
         <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
           Price range
         </h4>
+
+        {PRICE_RANGES.map((priceRange) => (
+          <PriceRangeFilter
+            key={priceRange.id}
+            priceRange={priceRange}
+            isActive={activePriceRanges.includes(priceRange.id)}
+            onToggle={onPriceRangeToggle}
+          />
+        ))}
       </div>
     </aside>
   );
