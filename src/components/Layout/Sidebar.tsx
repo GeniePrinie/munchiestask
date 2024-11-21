@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     return null;
   }
   return (
-    <aside className="bg-white border rounded-lg border-gray-200 shadow-sm overflow-y-auto p-4">
+    <div className="bg-white border rounded-lg border-gray-200 shadow-sm overflow-y-auto p-4">
       <h3 className="text-xl">Filter</h3>
 
       <div className="flex flex-col  gap-4 pb-4">
@@ -80,7 +80,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           ))}
         </div>
       </div>
-    </aside>
+    </div>
   );
 };
 
