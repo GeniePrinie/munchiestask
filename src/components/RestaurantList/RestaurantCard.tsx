@@ -19,10 +19,10 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   }, [restaurant.id]);
 
   return (
-    <div className="relative">
+    <div className="relative w-[340px]">
       <div
-        className="p-4 border rounded-lg hover:shadow-md w-auto h-44 
-        transition-shadow relative overflow-hidden bg-white"
+        className="mx-1.5 -mb-1 p-4 border rounded-lg hover:shadow-md w-auto 
+        transition-shadow relative overflow-hidden bg-white h-[200px]"
       >
         {!isOpen && (
           <>
@@ -44,7 +44,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
           <div className="flex gap-2 relative z-20">
             <div
               className="
-              border rounded-full px-3 py-1 inline-flex items-center gap-2 text-gray-900 border-gray-200 "
+              border rounded-full px-2.5 py-1 inline-flex items-center gap-2 text-gray-900 border-gray-200 text-xs"
             >
               <span
                 className={`
@@ -55,7 +55,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
               {isOpen ? "Open" : "Closed"}
             </div>
             {isOpen && (
-              <p className="border rounded-full px-3 py-1 inline-block">
+              <p className="border rounded-full px-2.5 py-1 inline-block text-xs">
                 {restaurant.delivery_time_minutes} min
               </p>
             )}

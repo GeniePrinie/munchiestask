@@ -33,51 +33,56 @@ const Sidebar: React.FC<SidebarProps> = ({
     return null;
   }
   return (
-    <div className="bg-white border rounded-lg border-gray-200 shadow-sm overflow-y-auto p-4">
-      <h3 className="text-xl">Filter</h3>
+    <div className="px-6">
+      <div className="md:mt-6 md:w-64 md:h-screen md:bg-white md:rounded-lg md:p-6 md:shadow-sm md:border border-gray-200">
+        <h3 className="text-xl hidden md:block">Filter</h3>
 
-      <div className="flex flex-col  gap-4 pb-4">
-        <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
-          Food category
-        </h4>
-
-        {filters.map((filter) => (
-          <FoodCategory
-            key={filter.id}
-            filter={filter}
-            isActive={activeFilters.includes(filter.id)}
-            onToggle={onToggle}
-          />
-        ))}
-
-        <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
-          Delivery time
-        </h4>
-
-        <div className="flex flex-row flex-wrap gap-2">
-          {DELIVERY_TIME_RANGES.map((timeRange) => (
-            <DeliveryTime
-              key={timeRange.id}
-              timeRange={timeRange}
-              isActive={activeDeliveryTimes.includes(timeRange.id)}
-              onToggle={onDeliveryTimeToggle}
-            />
-          ))}
+        <div className="hidden md:block">
+          <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
+            Food category
+          </h4>
+          <div className="flex flex-col gap-2 mt-2">
+            {filters.map((filter) => (
+              <FoodCategory
+                key={filter.id}
+                filter={filter}
+                isActive={activeFilters.includes(filter.id)}
+                onToggle={onToggle}
+              />
+            ))}
+          </div>
         </div>
+        <div>
+          <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
+            Delivery time
+          </h4>
 
-        <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
-          Price range
-        </h4>
+          <div className="flex flex-row flex-wrap gap-2 mt-2 mb-3 md:mb-0">
+            {DELIVERY_TIME_RANGES.map((timeRange) => (
+              <DeliveryTime
+                key={timeRange.id}
+                timeRange={timeRange}
+                isActive={activeDeliveryTimes.includes(timeRange.id)}
+                onToggle={onDeliveryTimeToggle}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block">
+          <h4 className="text-gray-400 uppercase text-xs font-semibold pt-5">
+            Price range
+          </h4>
 
-        <div className="flex flex-row gap-2">
-          {PRICE_RANGES.map((priceRange) => (
-            <PriceRangeFilter
-              key={priceRange.id}
-              priceRange={priceRange}
-              isActive={activePriceRanges.includes(priceRange.id)}
-              onToggle={onPriceRangeToggle}
-            />
-          ))}
+          <div className="flex flex-row gap-2 mt-2">
+            {PRICE_RANGES.map((priceRange) => (
+              <PriceRangeFilter
+                key={priceRange.id}
+                priceRange={priceRange}
+                isActive={activePriceRanges.includes(priceRange.id)}
+                onToggle={onPriceRangeToggle}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
