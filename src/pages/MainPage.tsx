@@ -49,43 +49,47 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <header className="flex items-center gap-2 py-6 px-7">
+      <header className="flex items-center gap-2 pt-8 px-5 md:px-11">
         <div className="w-7">
           <img src="/images/logo/munchiesLogo.png" alt="munchies logo" />
         </div>
         <h1 className="text-4xl">Munchies</h1>
       </header>
 
-      {/* <div className="min-h-screen bg-gray-50 flex"> */}
-      {/* <div className="w-64 absolute left-8 top-20 h-screen"> */}
-      <Sidebar
-        filters={filters}
-        activeFilters={activeFilters}
-        activeDeliveryTimes={activeDeliveryTimes}
-        activePriceRanges={activePriceRanges}
-        onToggle={handleFilterToggle}
-        onDeliveryTimeToggle={handleDeliveryTimeToggle}
-        onPriceRangeToggle={handlePriceRangeToggle}
-      />
-      {/* </div> */}
+      <div>
+        <div className="md:flex md:flex-row md:gap-6 md:px-6 overflow-x-hidden">
+          <div className="md:w-64 md:flex-shrink-0">
+            <Sidebar
+              filters={filters}
+              activeFilters={activeFilters}
+              activeDeliveryTimes={activeDeliveryTimes}
+              activePriceRanges={activePriceRanges}
+              onToggle={handleFilterToggle}
+              onDeliveryTimeToggle={handleDeliveryTimeToggle}
+              onPriceRangeToggle={handlePriceRangeToggle}
+            />
+          </div>
 
-      {/* <div className="flex-1 ml-64"> */}
-      <Topbar
-        filters={filters}
-        activeFilters={activeFilters}
-        onToggle={handleFilterToggle}
-      />
+          <div className="md:flex md:flex-col min-w-0">
+            <div>
+              <Topbar
+                filters={filters}
+                activeFilters={activeFilters}
+                onToggle={handleFilterToggle}
+              />
+            </div>
 
-      {/* <main className="px-4 sm:px-6 lg:px-8 py-4"> */}
-      <RestaurantList
-        activeFilters={activeFilters}
-        activeDeliveryTimes={activeDeliveryTimes}
-        activePriceRanges={activePriceRanges}
-      />
-      {/* </main> */}
+            <main>
+              <RestaurantList
+                activeFilters={activeFilters}
+                activeDeliveryTimes={activeDeliveryTimes}
+                activePriceRanges={activePriceRanges}
+              />
+            </main>
+          </div>
+        </div>
+      </div>
     </div>
-    // </div>
-    // </div>
   );
 };
 

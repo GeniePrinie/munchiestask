@@ -19,10 +19,10 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   }, [restaurant.id]);
 
   return (
-    <div className="relative">
+    <div className="relative w-[340px]">
       <div
-        className="p-4 border rounded-lg hover:shadow-md w-auto h-44 
-        transition-shadow relative overflow-hidden bg-white"
+        className="mx-1.5 -mb-1 p-4 border rounded-lg hover:shadow-md w-auto 
+        transition-shadow relative overflow-hidden bg-white h-[200px]"
       >
         {!isOpen && (
           <>
