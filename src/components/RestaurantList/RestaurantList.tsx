@@ -75,20 +75,20 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
   return (
     <div className="mx-auto p-4">
       <h2 className="text-4xl  mb-6">Restaurant's</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-x-6">
-        {restaurantArray.length > 0 ? (
-          restaurantArray.map((restaurant) => (
-            <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-          ))
-        ) : (
-          <div className="text-center text-gray-500 p-4">
-            {activeFilters.length > 0
-              ? "No restaurants found with selected filters"
-              : "No restaurants available"}
-          </div>
-        )}
-      </div>
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-x-6"> */}
+      {restaurantArray.length > 0 ? (
+        restaurantArray.map((restaurant) => (
+          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+        ))
+      ) : (
+        <div className="text-center text-gray-500 p-4">
+          {activeFilters.length > 0
+            ? "No restaurants found with selected filters"
+            : "No restaurants available"}
+        </div>
+      )}
     </div>
+    // </div>
   );
 };
 

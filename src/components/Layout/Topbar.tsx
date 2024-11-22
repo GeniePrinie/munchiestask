@@ -18,21 +18,21 @@ const Topbar: React.FC<TopbarProps> = ({
   }
   return (
     <div className="bg-gray-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-4">
-          <div className="flex overflow-x-auto gap-4 pb-4">
-            {filters.map((filter) => (
-              <FilterItem
-                key={filter.id}
-                filter={filter}
-                isActive={activeFilters.includes(filter.id)}
-                onToggle={onToggle}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
+      {/* <div className="py-4"> */}
+      {/* <div className="flex overflow-x-auto gap-4 pb-4"> */}
+      {filters.map((filter) => (
+        <FilterItem
+          key={filter.id}
+          filter={filter}
+          isActive={activeFilters.includes(filter.id)}
+          onToggle={onToggle}
+        />
+      ))}
     </div>
+    // </div>
+    // </div>
+    // </div>
   );
 };
 
